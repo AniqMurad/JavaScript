@@ -38,16 +38,18 @@ do{
 while(j<10)
 
 */
-
+/*
 let animal = {
     name: "zebra",
     leg: 4
 };
+*/ //objects at the bottom
 
 //console.log (animal.name)
 //console.log (animal["name"])
 //for in loop wrt objects
-for (let key in animal ){
+
+/* for (let key in animal ){
     console.log(key, animal[key]);
 }
 
@@ -63,3 +65,11 @@ for(let index in names){
 for (let name of names){
     console.log(name)
 }
+*/
+
+let animal= {
+    name: "Cow",
+    legs: 4
+}
+
+console.log(animal);
