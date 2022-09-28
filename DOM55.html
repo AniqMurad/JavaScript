@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        DOM Manipulation
+    </title>
+</head>
+
+<body>
+    <!--ul>li*3-->
+    <ul>
+        <li>
+            first element
+        </li>
+        <li>
+            second element
+        </li>
+        <li>
+            third element
+        </li>
+    </ul>
+    <table>
+        <tr>
+            <td>one</td>
+            <td>two</td>
+        </tr>
+        <tr>
+            <td>three</td>
+            <td>four</td>
+        </tr>
+    </table>
+    <script>
+        //document object attaced to window object
+        
+        //root node
+        console.log(document.documentElement);
+
+        //element node
+        console.log(document.body);
+        console.log(document.head);
+
+        //access children
+        console.log(document.body.childNodes);
+        console.log(document.body.children);
+        for (node of document.body.childNodes //.children
+        )
+        {
+            console.log(node);
+        }
+
+        console.log(document.body.firstChild);
+        console.log(document.body.lastChild);
+        console.log(document.body.firstElementChild);
+        console.log(document.body.lastElementChild);
+
+        const childrenOfBody = Array.from(document.body.children)
+        console.log(childrenOfBody);
+
+        //siblings
+        console.log(document.body.children[0]); //our 0 children is ul
+        const ulTag = document.body.children[0];
+        console.log(ulTag.nextElementSibling);
+        console.log(ulTag.nextSibling);
+
+        const firstLi = ulTag.children[0]
+        const secondLi = ulTag.children[1]
+        console.log(secondLi.previousElementSibling.textContent);
+
+        //table DOM Manipulation
+        const tableTag = document.body.children[1]
+        console.log(tableTag.tBodies[0].rows[0].cells[1].textContent);
+    </script>
+</body>
+
+</html>
