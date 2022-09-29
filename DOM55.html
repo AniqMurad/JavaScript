@@ -10,16 +10,16 @@
     </title>
 </head>
 
-<body>
+<body id="body">
     <!--ul>li*3-->
-    <ul>
-        <li>
+    <ul id="element" data="valid">
+        <li class="List-item">
             first element
         </li>
-        <li>
+        <li class="List-item">
             second element
         </li>
-        <li>
+        <li class="List-item">
             third element
         </li>
     </ul>
@@ -37,15 +37,17 @@
         //document object attaced to window object
         
         //root node
-        console.log(document.documentElement);
+        //console.log(document.documentElement);
 
         //element node
-        console.log(document.body);
-        console.log(document.head);
+        //console.log(document.body);
+        //console.log(document.head);
 
         //access children
-        console.log(document.body.childNodes);
-        console.log(document.body.children);
+        
+        //console.log(document.body.childNodes);
+        //console.log(document.body.children);
+        /*
         for (node of document.body.childNodes //.children
         )
         {
@@ -59,8 +61,10 @@
 
         const childrenOfBody = Array.from(document.body.children)
         console.log(childrenOfBody);
+        */
 
         //siblings
+        /*
         console.log(document.body.children[0]); //our 0 children is ul
         const ulTag = document.body.children[0];
         console.log(ulTag.nextElementSibling);
@@ -69,10 +73,61 @@
         const firstLi = ulTag.children[0]
         const secondLi = ulTag.children[1]
         console.log(secondLi.previousElementSibling.textContent);
+        */
 
         //table DOM Manipulation
+        /*
         const tableTag = document.body.children[1]
         console.log(tableTag.tBodies[0].rows[0].cells[1].textContent);
+        console.log(tableTag.rows);
+
+        console.log(tableTag.tBodies[0].rows[0].cells[1].style = "background-color: blue;");
+        */
+
+        //id search
+        //element.style.background = "red";
+        //console.log();
+
+        //const ulTag =  document.getElementById("element");
+        //ulTag.style.backgroundColor = "red";
+
+        //listItem = document.getElementsByClassName("List-item");
+        //console.log(listItem);
+        //console.log(document.getElementsByTagName("table"));
+
+        //query selector
+        //const listItems = document.querySelectorAll('.List-item');
+        //const listItems = document.querySelectorAll('#element');
+        //console.log(listItems);
+
+        /*
+        const listItems = document.querySelectorAll(' ul > li:last-child');
+        console.log(listItems[0].textContent);
+        
+        //attributes
+        console.log(element.getAttribute('data'));
+        console.log(element.setAttribute('order-placed','pending'));
+        console.log(element.removeAttribute('order-placed'));
+        console.log(element.hasAttribute('order-placed'));
+        console.log(element.attributes);
+        */
+       
+        //creating and removing the node elements
+
+        const newDiv = document.createElement('div');
+        const newText = document.createTextNode('hello');
+        newDiv.appendChild(newText);
+        //body.append(newDiv);
+        //body.prepand(newDiv);
+        //body.before(newDiv);
+        body.after(newDiv);
+
+        //body.replaceWith(newDiv);
+        //body.remove();
+
+        //click button events on click
+
+
     </script>
 </body>
 
